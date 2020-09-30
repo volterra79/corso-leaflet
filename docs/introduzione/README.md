@@ -15,9 +15,7 @@ Inoltre il suo sito ufficiale [**leaflet.com**](https://leafletjs.com) è ricchi
 
 ## Preparazione ambiente di lavoro ##
 
-I controlli sono elementi visuali con i quali si possono attivare/disattivare le interazioni. Come per le interazioni, OL contiene già alcuni controlli predefiniti.
 
-Quando viene istanziato `ol.Map` vengono automaticamente creati i seguenti controlli:
 
 
 
