@@ -24,7 +24,12 @@ module.exports = {
       {
         title: 'Controlli',
         path: '/controlli/',
-      },{
+      },
+      {
+        title: 'Plugins',
+        path: '/plugins/',
+      },
+      {
         title: 'Leaflet vs OpenLayers',
         path: '/leafletvsopenlayers/'
       },
