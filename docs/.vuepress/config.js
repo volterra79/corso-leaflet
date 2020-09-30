@@ -1,14 +1,13 @@
 module.exports = {
   home: true,
   title: 'Corso Leaflet',
+  description: 'Corso base Leaflet',
   base: '/corso-leaflet/',
   head: [
     ['script', { src: 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.js' }],
     ['style', { src: 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css' }],
   ],
-  plugins: [
-    'demo-block'
-  ],
+  plugins: ['@vuepress/back-to-top'],
   themeConfig: {
     nav: [
       {text: 'GIS3W', link: 'https://gis3w.it', target: '_blank'},
@@ -25,14 +24,13 @@ module.exports = {
       {
         title: 'Controlli',
         path: '/controlli/',
+      },{
+        title: 'Leaflet vs OpenLayers',
+        path: '/leafletvsopenlayers/'
       },
       {
         title: 'Esempi',
         path: '/esempi/'
-      },
-      {
-        title: 'Leaflet vs OpenLayers',
-        path: '/leafletvsopenlayers/'
       }
     ]
   }

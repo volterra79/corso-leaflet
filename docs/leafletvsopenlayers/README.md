@@ -1,4 +1,8 @@
 ---
 title: Leaflet vs Openlayers 
 ---
-## Primcipali differenze ##
+## Principali differenze ##
+
+| Leaflet                | Openlayers                 |
+| --------------------- | -------------------------- |
+| Leggero               |Più pesante            |
