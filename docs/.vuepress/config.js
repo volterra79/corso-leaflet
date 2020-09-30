@@ -11,11 +11,29 @@ module.exports = {
   ],
   themeConfig: {
     nav: [
-      {text: 'Introduzione', link: '/introduzione/'},
-      {text: 'Mappa', link: '/mappa/'},
-      {text: 'Controlli', link: '/controlli/'},
-      {text: 'Gis3w', link: 'https://gis3w.it'},
+      {text: 'GIS3W', link: 'https://gis3w.it', target: '_blank'},
     ],
-    sidebar: 'auto'
+    sidebar: [
+      {
+        title: 'Introduzione',   // required
+        path: '/introduzione/',      // optional, link of the title, which should be an absolute path and must exist
+      },
+      {
+        title: 'Mappa',
+        path: '/mappa/',
+      },
+      {
+        title: 'Controlli',
+        path: '/controlli/',
+      },
+      {
+        title: 'Esempi',
+        path: '/esempi/'
+      },
+      {
+        title: 'Leaflet vs OpenLayers',
+        path: '/leafletvsopenlayers/'
+      }
+    ]
   }
 };
