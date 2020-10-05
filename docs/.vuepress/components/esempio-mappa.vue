@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: "esempio"
+    name: "esempio-mappa"
   }
 </script>
 

@@ -2,12 +2,15 @@
 title: Mappa 
 ---
 
-## La prima mappa ##
+## Creare una mappa ##
 
 Iniziamo con il creare l'istanza map.
 
-``` js{1}
-const map = L.map('map').setView([51.505, -0.09], 13);
+``` js{2,3}
+const map = L.map('map', {
+    center: [43.39706523932025, 10.86822509765625],
+    zoom:10
+});;
 ```
 
 dove **map** è l'id del div verrà disegnata la nostra mappa.
@@ -33,4 +36,10 @@ body {
 
 ```
 
-<esempio1></esempio1>
+<esempio-mappa></esempio-mappa>
+
+## Aggiungere un Layer ##
+
+Ora la mappa è vuota. Saraà necessario aggiunger un layer
+
+<esempio-osm></esempio-osm>
