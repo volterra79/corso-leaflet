@@ -10,24 +10,35 @@ module.exports = {
   plugins: ['@vuepress/back-to-top'],
   themeConfig: {
     nav: [
-      {text: 'GIS3W', link: 'https://gis3w.it', target: '_blank'},
+      {
+        text: 'GIS3W', link: 'https://gis3w.it', target: '_blank'
+      },
     ],
     sidebar: [
       {
-        title: 'Introduzione',   // required
-        path: '/introduzione/',      // optional, link of the title, which should be an absolute path and must exist
+        title: 'Introduzione',
+        path: '/introduzione/'
       },
       {
         title: 'Mappa',
         path: '/mappa/',
-      },
-      {
-        title: 'Controlli',
-        path: '/controlli/',
+        collapsable: false,
+        children: [
+          '/mappa/layers/',
+          '/mappa/projections/',
+          '/mappa/controlli/',
+          '/mappa/eventi/',
+          '/mappa/popup/'
+         ]
       },
       {
         title: 'Plugins',
         path: '/plugins/',
+        collapsable: false,
+        children: [
+          '/plugins/editing/',
+          '/plugins/wfst/'
+        ]
       },
       {
         title: 'Leaflet vs OpenLayers',
@@ -35,8 +46,9 @@ module.exports = {
       },
       {
         title: 'Esempi',
-        path: '/esempi/'
-      }
+        path: '/esempi/',
+        collapsable: false
+      },
     ]
   }
 };

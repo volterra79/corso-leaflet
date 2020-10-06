@@ -1,6 +1,9 @@
----
-title: Mappa 
----
+# Mappa 
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat.
 
 ## Creare una mappa ##
 
@@ -38,8 +41,9 @@ body {
 
 <esempio-mappa></esempio-mappa>
 
-## Aggiungere un Layer ##
+## Aggiungere un Layer OSM ##
 
-Ora la mappa è vuota. Saraà necessario aggiunger un layer
+Ora la mappa è vuota. Sarà necessario aggiunger un layer
 
 <esempio-osm></esempio-osm>
+
