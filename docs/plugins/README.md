@@ -7,6 +7,12 @@ Come detto nell'introduzione di Leaflet, la libreria è stata pensata e sviluppa
 Per poter estenderne le funzionalità base si ricorre all'utilizzo di plug-in.
 Grazie alla numerosa comunità che c'è dietro a Leaflet, ci sono letteralmente centinaia di plugin tra cui scegliere.
 
+## Come estendere Leaflet
+
+Andiamo a vedere come è strutturato il codice Leaflet e come è possibile estenderlo per creare nuove funzionalità [**link**](https://leafletjs.com/examples/extending/extending-1-classes.html)
+
+<struttura></struttura>
+
 ## Plugin editing ##
 [**leaflet-geoman**](https://github.com/geoman-io/leaflet-geoman)
 

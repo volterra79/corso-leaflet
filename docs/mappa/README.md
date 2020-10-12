@@ -47,3 +47,10 @@ Ora la mappa è vuota. Sarà necessario aggiunger un layer
 
 <esempio-osm></esempio-osm>
 
+## Map Panes [**link**](https://leafletjs.com/reference-1.7.1.html#map-pane)
+
+Leaflet ha il concetto di Map Panes per la visualizzaione degli elementi in mappa.
+**Panes** non sono altro che elementi DOM che sono utlizzazi per gestire l'ordine "piramidale" o di "stack" dei layers su mappa.
+
+
+

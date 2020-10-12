@@ -26,7 +26,9 @@ module.exports = {
         children: [
           '/mappa/layers/',
           '/mappa/projections/',
+          '/mappa/stili/',
           '/mappa/controlli/',
+          '/mappa/handlers/',
           '/mappa/eventi/',
           '/mappa/popup/'
          ]
