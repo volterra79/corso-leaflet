@@ -29,9 +29,12 @@ module.exports = {
           '/mappa/stili/',
           '/mappa/controlli/',
           '/mappa/handlers/',
-          '/mappa/eventi/',
           '/mappa/popup/'
          ]
+      },
+      {
+        title: 'Eventi',
+        path: '/eventi/'
       },
       {
         title: 'Plugins',
