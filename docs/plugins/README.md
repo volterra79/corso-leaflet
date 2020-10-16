@@ -7,7 +7,7 @@ Come detto nell'introduzione di Leaflet, la libreria è stata pensata e sviluppa
 Per poter estenderne le funzionalità base si ricorre all'utilizzo di plug-in.
 Grazie alla numerosa comunità che c'è dietro a Leaflet, ci sono letteralmente centinaia di plugin tra cui scegliere.
 
-## Come estendere Leaflet [**link**]
+## Come estendere Leaflet
 
 Andiamo a vedere come è strutturato il codice Leaflet e come è possibile estenderlo per creare nuove funzionalità [**link**](https://leafletjs.com/examples/extending/extending-1-classes.html)
 
@@ -21,7 +21,7 @@ Alcuni concetti utili per capire come estendere una classe del core di Leaflet e
     In Leaflet’s L.Class, il metodo costructo viene chiamato **initialize**.
     Esempio:
     
-    ```html{8,10}
+    ```js{8,10}
     const MiaClasse = L.Class.extend({
         
             options: {
@@ -41,7 +41,28 @@ Alcuni concetti utili per capire come estendere una classe del core di Leaflet e
         console.log(miaistanza.options.height) => 1
         
     ``` 
+Inoltre se vogliamo che la nostra classe faccia qualcosa prima di chiamare il    
+
+### Chiamare un metodo della Classe Padre
+
+Calling a method of a parent class is achieved by reaching into the prototype of the parent class and using Function.call(…). This can be seen, for example, in the code for L.FeatureGroup:
+
+Esempio:
+
+```js{4,8}
+L.FeatureGroup = L.LayerGroup.extend({
+
+    addLayer: function (layer) {
+        L.LayerGroup.prototype.addLayer.call(this, layer);
+    },
     
+    removeLayer: function (layer) {
+        L.LayerGroup.prototype.removeLayer.call(this, layer);
+    }
+});
+
+```
+
     
 Come avrete notato Leaflet ha due possibilità di creare un'istanza di classe.
 
