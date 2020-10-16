@@ -10,7 +10,15 @@ Come in ogni software grafico e GIS l’ordine di rappresentazione dei layer è 
 
 <img src="/assets/img/layers_stack.png" title="Pila dei layer"/>
 
-## Layer Raster
+## Layer Raster 
+
+I layer Raster gestiti dal core di Leaflet sono:
+
+* Tile Layer [**link**](https://leafletjs.com/reference-1.7.1.html#tilelayer)
+* Layer WMS [**link**](https://leafletjs.com/reference-1.7.1.html#tilelayer-wms)
+* Image Overlay [**link**](https://leafletjs.com/reference-1.7.1.html#imageoverlay)
+
+Un layer raster lo abbiamo gà utilizzato nella creazione della mappa e nell'aggiunta del primo layer OSM
 
 ### Esempio WMS
 
@@ -19,7 +27,21 @@ Come in ogni software grafico e GIS l’ordine di rappresentazione dei layer è 
 
 ## Layer Vettoriali
 
-### Esempio WFS
+In Leaflet ogni oggetto aggiunto alla mappa viene considerato un Layer (Poligoni, Cerchi, Popup etc ..);
 
-<wfslayer></wfslayer>
+A differenza del concetto di Feature espresso in Openlayers e nei Gis, Dove ogni layer può contenere più features, in Leaflet esistono i layers
 
+* [**LayerGroup**](https://leafletjs.com/reference-1.7.1.html#layergroup) Questo permette di raggruppare più layers trattandoli come unico layer
+* [**FeatureGroup**](https://leafletjs.com/reference-1.7.1.html#featuregroup) Estende il concetto di LayerGroup 
+    * il metodo **bindPopup** permette di associare il popup a tutti i layer in una volta invece che doverlo associare ad ogni singolo layer( lo stesso vale per il metodo bindTooltip)
+    * Gli Events (Eventi) sono propagati su ogni layer appartenente al FeatureGroup, così se il gruppo ha un gestore di eventi, verrà gestito per ogni layer (include anche l'evento mouse e eventi custom).
+    * Ha l'evento layeradd e layerremove
+
+LayerGroup
+FeatureGroup
+
+<layergroup-featuregroup></layergroup-featuregroup>
+
+Un'altra tipologia di layer vettoriale che ricorre nei progetti è scuramente il tipo [**GeoJSON**](https://leafletjs.com/reference-1.7.1.html#geojson)
+
+Esempio

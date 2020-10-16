@@ -7,11 +7,46 @@ Come detto nell'introduzione di Leaflet, la libreria è stata pensata e sviluppa
 Per poter estenderne le funzionalità base si ricorre all'utilizzo di plug-in.
 Grazie alla numerosa comunità che c'è dietro a Leaflet, ci sono letteralmente centinaia di plugin tra cui scegliere.
 
-## Come estendere Leaflet
+## Come estendere Leaflet [**link**]
 
 Andiamo a vedere come è strutturato il codice Leaflet e come è possibile estenderlo per creare nuove funzionalità [**link**](https://leafletjs.com/examples/extending/extending-1-classes.html)
 
 <struttura></struttura>
+
+Alcuni concetti utili per capire come estendere una classe del core di Leaflet e creare qualcosa di personalizzato:
+
+* **L.Class.extend** : Funzione che prede un oggetto come parametro e ma ad **estendere** la classe padre creado una classe figlio con attributi e metodi nuovi 
+* **L.Class.include** : Funzione ch accetta sempre un oggetto javascript come sopra ma che può redefinire un metodo o attributo già presente nella Classe padre
+* **L.Class.initialize** : Nella classe Javascript quando viene istanziata una classe viene chaimato sempre il metodo **constructor**.
+    In Leaflet’s L.Class, il metodo costructo viene chiamato **initialize**.
+    Esempio:
+    
+    ```html{8,10}
+    const MiaClasse = L.Class.extend({
+        
+            options: {
+                width: 1,
+                height: 1
+            },
+        
+            initialize: function(name, options) {
+                this.name = name;
+                L.setOptions(this, options);
+            }
+            
+        });
+        
+        const miaistanza = new MiaClasse('Red', {width: 10});
+        console.log(miaistanza.options.width) => 10;
+        console.log(miaistanza.options.height) => 1
+        
+    ``` 
+    
+    
+Come avrete notato Leaflet ha due possibilità di creare un'istanza di classe.
+
+* Tramite **new** L.NomeClasse
+* Tramite la funzione **Factory** associata alla classe L.nomeclasse (in minuscolo)    
 
 ## Plugin editing ##
 [**leaflet-geoman**](https://github.com/geoman-io/leaflet-geoman)
