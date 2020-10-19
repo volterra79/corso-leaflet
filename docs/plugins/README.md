@@ -16,7 +16,7 @@ Andiamo a vedere come è strutturato il codice Leaflet e come è possibile esten
 Alcuni concetti utili per capire come estendere una classe del core di Leaflet e creare qualcosa di personalizzato:
 
 * **L.Class.extend** : Funzione che prede un oggetto come parametro e ma ad **estendere** la classe padre creado una classe figlio con attributi e metodi nuovi 
-* **L.Class.include** : Funzione ch accetta sempre un oggetto javascript come sopra ma che può redefinire un metodo o attributo già presente nella Classe padre
+* **L.Class.include** : Funzione ch accetta sempre un oggetto javascript come sopra ma che può redefinire un metodo o attributo già presente nella Classe padre. In questo modo tutte le sotto classi "subiranno" la redifinizione del medodo della classe padre
 * **L.Class.initialize** : Nella classe Javascript quando viene istanziata una classe viene chaimato sempre il metodo **constructor**.
     In Leaflet’s L.Class, il metodo costructo viene chiamato **initialize**.
     Esempio:

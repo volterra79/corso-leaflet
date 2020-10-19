@@ -29,7 +29,7 @@ Un layer raster lo abbiamo gà utilizzato nella creazione della mappa e nell'agg
 
 In Leaflet ogni oggetto aggiunto alla mappa viene considerato un Layer (Poligoni, Cerchi, Popup etc ..);
 
-A differenza del concetto di Feature espresso in Openlayers e nei Gis, Dove ogni layer può contenere più features, in Leaflet esistono i layers
+A differenza di Openlayers e del mondo GIS, dove esitono concetti come Layer e Feature e quindi dove ogni layer può contenere più features, in Leaflet esistono i layers
 
 * [**LayerGroup**](https://leafletjs.com/reference-1.7.1.html#layergroup) Questo permette di raggruppare più layers trattandoli come unico layer
 * [**FeatureGroup**](https://leafletjs.com/reference-1.7.1.html#featuregroup) Estende il concetto di LayerGroup 
