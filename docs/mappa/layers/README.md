@@ -45,3 +45,8 @@ FeatureGroup
 Un'altra tipologia di layer vettoriale che ricorre nei progetti è scuramente il tipo [**GeoJSON**](https://leafletjs.com/reference-1.7.1.html#geojson)
 
 Esempio
+
+
+## Layer GeoJSON
+
+<layer-geojson></layer-geojson>
