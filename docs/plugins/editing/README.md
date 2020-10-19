@@ -1,6 +1,6 @@
----
-title: Editing
----
+# Editing
+
+
 [**leaflet-geoman**](https://github.com/geoman-io/leaflet-geoman)
 
 Plugin per disegnare elementi vettoriali

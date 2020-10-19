@@ -41,6 +41,7 @@ module.exports = {
         path: '/plugins/',
         collapsable: false,
         children: [
+          '/plugins/getfeatureinfo/',
           '/plugins/editing/',
           '/plugins/wfst/'
         ]

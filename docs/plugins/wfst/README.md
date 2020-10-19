@@ -1,6 +1,5 @@
----
-title: WFS-T - Transactional Web Feature Service 
----
+# WFS-T - Transactional Web Feature Service 
+
 
 [**Leaflet-WFST**](http://flexberry.github.io/Leaflet-WFST/)
 

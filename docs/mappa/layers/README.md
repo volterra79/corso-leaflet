@@ -37,8 +37,7 @@ A differenza di Openlayers e del mondo GIS, dove esitono concetti come Layer e F
     * Gli Events (Eventi) sono propagati su ogni layer appartenente al FeatureGroup, così se il gruppo ha un gestore di eventi, verrà gestito per ogni layer (include anche l'evento mouse e eventi custom).
     * Ha l'evento layeradd e layerremove
 
-LayerGroup
-FeatureGroup
+Esempio **LayerGroup** e **FeatureGroup**
 
 <layergroup-featuregroup></layergroup-featuregroup>
 
@@ -50,3 +49,13 @@ Esempio
 ## Layer GeoJSON
 
 <layer-geojson></layer-geojson>
+
+
+## Layer UI
+
+In Leaflet altro ai Layesr standar Vettoriali e Raster, esiste una terza categoria di Layer: I Layer UI o "Grafici"
+Sono trattati allo stesso mdo degli altr Layers e rientrano in questa categoria:
+
+* **L.Marker** che non è altro che un layer puntuale con la caratteristica ddi stile del marker (Esempio: ```js L.marker([50.5, 30.5]).addTo(map);```)
+* ** L.popup()** per la visualizzazione dei popup su mappa
+* **L.tooltip** Visualizzazione dei tooltip (o informazioni rapide)
