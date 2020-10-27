@@ -37,6 +37,14 @@ module.exports = {
         path: '/eventi/'
       },
       {
+        title: 'Tipi di Base',
+        path: '/tipibase/'
+      },
+      {
+        title: 'Classi di Base',
+        path: '/classibase/'
+      },
+      {
         title: 'Plugins',
         path: '/plugins/',
         collapsable: false,

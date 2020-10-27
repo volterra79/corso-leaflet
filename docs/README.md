@@ -8,7 +8,12 @@ actionLink: /introduzione/
 features:
 - title: Documentazione
   details: Introduzione alla libreria Leaflet passo per passo.
+  
 - title: Esempi
   details: Esempi interattivi con cui poter provare il codice.
-footer: MIT Licensed | Copyright © 2020 Francesco Boccacci (gis3w)
+  
+- title: Leaflet vs Openlayers
+  details: Le principali differernze tra le due librerie   
+  
+footer: MIT Licensed | Copyright © 2020 Francesco Boccacci (boccacci.francesco@gmail.com)
 ---
