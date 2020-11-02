@@ -3,19 +3,20 @@ title: Introduzione
 ---
 ## Che cosa è Leaflet.js ##
 
-Leaflet è una libreria JavaScript open source  che permette in modo semplice di pubblicare delle mappe interattive all’interno di una pagina web che mobile.
+Leaflet è una libreria JavaScript open source  che permette in modo semplice di pubblicare mappe interattive all’interno di una pagina web.
 
 Le sue principali doti sono: 
 
 * Leggero 
 * Versatile e facile da usare (ha delle API ben documentate) 
+* Orientato più sulla parte di grafica
 * Esistono molti plugins che ne estendono le funzionalità.
 
-Inoltre il suo sito ufficiale [**leaflet.com**](https://leafletjs.com) è ricchissimo di documentazione, tutorial ed esempi pratici già realizzati.
+Il suo sito ufficiale [**leaflet.com**](https://leafletjs.com) è ricchissimo di documentazione, tutorial ed esempi pratici da cui prendere spunto per inziare a sviluppare.
 
 ## Preparazione ambiente di lavoro ##
 
-Creare ul file index.html con la seguente struttura
+Creare il file index.html con la seguente struttura
 
 ``` html{7,11,13}
 <!DOCTYPE html>
