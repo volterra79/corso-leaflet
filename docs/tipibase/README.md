@@ -50,6 +50,13 @@ In Leafleft ci sono alcuni tipi di base che vengono utilizzati dalle altri class
     L.marker([50.505, 30.57], {icon: Icona}).addTo(map);
   ```
 
-* **DivIcon**
+* **DivIcon**: Rappresenta un'icona leggera per markers che usa un semplice **div** invece che un'immagine. Eredita dalla classe **Icon** ma ignora il parametro **iconUrl** e l'opzione **shadow**.
+
+   ```js
+    const IconaDiv = L.divIcon({className: 'icona-div'});
+    // da settare .icona-div styles in CSS
+    
+    L.marker([50.505, 30.57], {icon: IconaDiv}).addTo(map);
+   ```
 
 

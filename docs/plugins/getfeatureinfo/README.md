@@ -2,9 +2,10 @@
 
 [**leaflet.wms**](https://github.com/heigeo/leaflet.wms)
 
-Esempio GetFeatureInfo per un layer WMS
+Esempio GetFeatureInfo per un layer WMS sviluppato con plugin:
 
+<getfeatureinfo-plugin></getfeatureinfo-plugin>
 
-oppure fatto custom
+oppure fatto custom da noi:
 
-Esempio
+<getfeatureinfo></getfeatureinfo>
