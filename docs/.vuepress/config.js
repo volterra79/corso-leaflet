@@ -27,8 +27,7 @@ module.exports = {
           '/mappa/layers/',
           '/mappa/projections/',
           '/mappa/controlli/',
-          '/mappa/handlers/',
-          '/mappa/popup/'
+          '/mappa/handlers/'
          ]
       },
       {
