@@ -55,12 +55,7 @@ module.exports = {
       {
         title: 'Leaflet vs OpenLayers',
         path: '/leafletvsopenlayers/'
-      },
-      {
-        title: 'Esempi',
-        path: '/esempi/',
-        collapsable: false
-      },
+      }
     ]
   }
 };

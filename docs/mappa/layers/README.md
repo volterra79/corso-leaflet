@@ -24,7 +24,6 @@ Un layer raster lo abbiamo gà utilizzato nella creazione della mappa e nell'agg
 
 <wmslayer></wmslayer>
 
-
 ## Layer Vettoriali
 
 In Leaflet ogni oggetto aggiunto alla mappa viene considerato un Layer (Poligoni, Cerchi, Popup etc ..);

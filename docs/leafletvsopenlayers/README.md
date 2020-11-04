@@ -17,24 +17,17 @@ Un sempio su tutti: se la tua applicazione necessita di supportare layers con di
 Una cosa da dire è che OL, avendo un'API complessa, la curva di apprendimento per prendere dimsitechezza conil codice sarà più lenta, ma sicuramente permetterà di costruire applicazione più complesse e robuste.
 Altra cosa che può mettere in confusione se uno ha già esperienza con altre librerie di gestione mappe, che le coordinate in OpenLayers non sono in formato LatLon, ma in LonLat che è il modo corretto dal punto di vista GIS.
 
-## Supporto di vari formati di dati GIS
+## Struttura del codice
+
+In generale **Leaflet** si può considerare una libreria più di "alto livello" rispetto a Openlayers. Questo significa che in **Leaflet** molte cose sono delegate alla liberia internamente, lassciando l'utente di scrivere meno codice.
+
+**Openlayers** invece ha una struttura più "gerarchica" e "modulare" in modo tale da scomporre le varie parti che compongono la libreria in modo tale che ognuna faccia solo un compito specifico
+
+Lo possiamo vedere dal seguente codice:
 
 **Leaflet**
 
-Il core di Leaflet supporta soloil formato GeoJSON. Per gli altri formati dobbiamo ricorrere a plugins esterni come  CSV, WKT, TopoJSON, GPX e altri.
-
-**Openlayers**
-
-OpenLayers supporta GeoJSON, GeoRSS, KML, GML, e tutti i dati standard  gli standard OGC come WMS o WFS.
-
-## Esempio di codice
-
-Creare una mappa con OSM
-
-**Leaflet**
-
-```js
-
+```js{7,8}
 const center = [41.122132, 14.167849]; // in EPSG:4326 
 const map = new ol.Map({
     target: 'map',
@@ -44,12 +37,11 @@ const map = new ol.Map({
     center,
     zoom: 6
 });
-
 ```
 
 **Openlayers**
 
-```js
+```js{9,10,11,12}
 const center = [41.122132, 14.167849]; // in EPSG:4326 
 const map = new ol.Map({
     target: 'map',
@@ -64,8 +56,31 @@ const map = new ol.Map({
     })
 });
 ```
+Come possiamo vedere dal codice evidenziato sopra, **Leaflet** non ha il concetto di oggetto View e quindi viene gestito internamente dalla classe L.Map. 
 
-Since Leaflet is a higher level API than OpenLayers 3, it usually takes less JavaScript code to get it up and running. Once you want to deviate from the standard functionality that Leaflet provides, however, it is likely that you will end up writing a lot of code unless there is a plug-in that meets your exact needs. On the other hand, OpenLayers 3 is a lower level API which requires more JavaScript coding to initialize and set up the map. This can be convenient when you have customized and complex requirements, as the API allows more control over the map and your data.
+**Openlayers** invece separa la Mappa dall View (che è il cuore della gestione geografica della mappa). In questo modo ogni oggetto è "specializzato" così da permettere all'utente un maggior controllo.
+
+## Supporto di vari formati di dati GIS
+
+**Leaflet**
+
+Il core di Leaflet supporta solo il formato **GeoJSON**. Per gli altri formati dobbiamo ricorrere a plugins esterni come  CSV, WKT, TopoJSON, GPX e altri.
+
+**Openlayers**
+
+OpenLayers supporta **GeoJSON**, **KML**, **GML** e tutti i formati standard.
+
+## Trasformazioni e riproiezioni
+
+
+## Handler vs Interactions
+
+
+## Layer e Feature
+
+Come già detto, in Leaflet tutti gli elementi della mappa sono considerato **Layer**.
+
+In **OpenLayers** invece c'è ben chiara e netta la distizione tra oggetto **Layer** e **Feature**. Ogni classe ha i propri metodi e attributi.
 
 ## Conclusione
 
@@ -78,4 +93,4 @@ Sotto è riportato un link aluni esempi di sviluppo fatte con **Leaflet** e sia 
 Un'ultima cosa. Qualsisiasi sarà la vostra scelta, una cosa sarà importante, come per tutte le librerie/frameweork ch userere. Dovete conoscere bene il **Javascript**
 
 
-Questo [**link**](https://astuntechnology.github.io/osgis-ol3-leaflet/index.html) potete vede alcuni esempi scritti in OL che in Leaflet
+Questo [**link**](https://astuntechnology.github.io/osgis-ol3-leaflet/index.html) potete vede alcuni esempi scritti in OpenLayer che in Leaflet
