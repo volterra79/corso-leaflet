@@ -70,11 +70,41 @@ Il core di Leaflet supporta solo il formato **GeoJSON**. Per gli altri formati d
 
 OpenLayers supporta **GeoJSON**, **KML**, **GML** e tutti i formati standard.
 
-## Trasformazioni e riproiezioni
+## Proiezioni
+
+**Leaflet** usa come sistema di proiezione per la mappa **ESPG:3857** e tutto ciò che riguarda le coordinate in **LatLon** gradi (centro mappa, bounds, etc..).
+
+**Openlayers** utilizza di default **EPSG:3857** per la mappa e per le coordinate he riguardano la mappa lo stesso sistema di riferimento. Inoltre a differenza di **Leaflet** le coordinate geografiche seguono lo standar GIS **Longitudine/Latitudine**.
+
+### Proiezioni 
+
+**Leaflet**
+ 
+* Necessita di un plugin esterno **Proj4leaflet** per utilizzare proiezioni diverse da quelle standard
+
+* Può utilizzare un Sistema di riferimento alla volta. Non è possibile avere Layer in un sistema di riferimento diverso da quello della mappa
+
+* la traformazione tra coordinate di un sistema di riferimento ad un altro non è gestita dalla libreria. Dobbiamo utilizzare la libreria [**proj4s**](http://proj4js.org/) per fare conversioni
+  
+  ```js
+  proj4('EPSG:3045','EPSG:4326', [429482.6500978756, 4552418.298212856]) // restituisce [14.159999999999998, 41.11999999999998] Longitudine/Latitudine
+  ```
+
+**Openlayers** 
+
+* Necessita della libreria **proj4j** per aggiungere nuove proiezioni da quelle standard ma si integra alla perfezione con la liberia OL
+
+* Possiamo utilizzare layers con diversi Sistemi di reiferimento tra loro e la libreria pensa alla riproiezione
+
+* La trasformazione di coordinate da un sistema di riferimento all'altro è semplice utlizzando il metodo statico **ol.proj.transform(coordinates, ProiezioneCoordinate, ProiezioneFinale)**
 
 
-## Handler vs Interactions
+## Handler vs Interaction
 
+**Leaflet** ha il concetto di **Handler** come funzione (e non elemento grafico) che ha lo scopo di reagire al cambiamento di stato della mappa
+
+**Openlayer** ha il concetto di **Interaction** che h lo stesso significato di Leaflet. Gestisce (senza elemento grafico) il cambiamento di stato della mappa
+ 
 
 ## Layer e Feature
 
