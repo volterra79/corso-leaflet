@@ -1,5 +1,5 @@
 <template>
-  <iframe width="100%" height="500" src="//jsfiddle.net/volterra79/6fm3r79k/embedded/result,js,html,css" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+  <iframe width="100%" height="500" src="//jsfiddle.net/volterra79/owvpb2e6/embedded/result,js,html,css" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 </template>
 
 <script>
