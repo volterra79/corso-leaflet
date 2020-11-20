@@ -8,7 +8,7 @@ Come in ogni software grafico e GIS l’ordine di rappresentazione dei layer è 
 * gli strati contenenti elementi poligonali stanno al di sotto di quelli contenenti elementi lineari
 * gli strati con elementi lineari stanno al di sotto di quelli contenenti elementi puntuali.
 
-<img src="/assets/img/layers_stack.png" title="Pila dei layer"/>
+<img src="/corso-leaflet/assets/img/layers_stack.png" title="Pila dei layer"/>
 
 ## Layer Raster 
 
