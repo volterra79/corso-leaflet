@@ -4,11 +4,17 @@
 
 Come in ogni software grafico e GIS l’ordine di rappresentazione dei layer è un elemento fondamentale per la corretta visualizzazione dei loro contenuti. La logica è semplice:
 
-* le basi cartografiche di sfondo, come ad esempio uno strato OpenStreetMap o l’ombreggiatura di un DTM, stanno nella posizione più bassa della pila di layers
-* gli strati contenenti elementi poligonali stanno al di sotto di quelli contenenti elementi lineari
-* gli strati con elementi lineari stanno al di sotto di quelli contenenti elementi puntuali.
+* le basi cartografiche di sfondo (**baselayers**), come ad esempio il layer OpenStreetMap o l’ombreggiatura di un DTM, stanno nella posizione più bassa della pila di layers
+* gli strati contenenti elementi poligonali stanno al di sotto di quelli contenenti elementi lineari (**overlay**)
+* gli strati con elementi lineari stanno al di sotto di quelli contenenti elementi puntuali (**overlay**)
 
 <img src="/corso-leaflet/assets/img/layers_stack.png" title="Pila dei layer"/>
+
+
+## Map Panes [**link**](https://leafletjs.com/reference-1.7.1.html#map-pane)
+
+Leaflet utilizza il concetto di **Map Panes** per l'ordinamento dei layers su mappa.
+**Panes** non sono altro che elementi DOM che sono utlizzazi per gestire l'ordine "piramidale" o di "stack" degli elementi all'interno della mappa.
 
 ## Layer Raster 
 

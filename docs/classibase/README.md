@@ -12,7 +12,7 @@ Per poter comprendedre meglio come funziona un plugin e come poter personalizzar
 
 ## L.Class
 
-Come si è visto dalla struttura del codice Leaflet [**L.Class**](https://leafletjs.com/reference-1.7.1.html#class)** è la classe padre da cui tutte le altre classi derivano (ad eccexione delle classi riguardandi la gestione del DOM e quelle riguardanti LatLng e Bounds).
+Come si è visto dalla struttura del codice Leaflet [**L.Class**](https://leafletjs.com/reference-1.7.1.html#class)** è la classe padre da cui tutte le altre classi derivano (ad eccezione delle classi riguardandi la gestione del DOM e quelle riguardanti LatLng e Bounds).
 
 In aggiunta al modello classico di eredità supportato da Javascript (prototipale), essa introduce alcuni proprietà speciali per organizzare e svliluppare meglio il codice (**options**, **includes** e **statics** ad esempio).
 
@@ -23,7 +23,7 @@ Capire come estendere  una classe Leaftlet aggiungendo/sostituendo metodi ci per
 
 const Corso = L.Class.extend({ 
     initialize: function (nomecorso) {
-        this.nomecorso = greeter;
+        this.nomecorso = nomecorso;
         // class constructor
     },
     presentati() {
