@@ -24,8 +24,8 @@ module.exports = {
         path: '/mappa/',
         collapsable: false,
         children: [
-          '/mappa/projections/',
           '/mappa/layers/',
+          '/mappa/projections/',
           '/mappa/controlli/',
           '/mappa/handlers/'
          ]

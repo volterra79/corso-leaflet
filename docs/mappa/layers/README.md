@@ -62,6 +62,8 @@ Inoltre ogni Layer è un'estensione della classe base **L.path** e quindi ne der
 Un'altra tipologia di layer vettoriale che ricorre nei progetti è scuramente il tipo [**GeoJSON**](https://leafletjs.com/reference-1.7.1.html#geojson)
 Come primo argomento si deve passare il dato in formato **geoJSON**. Come secondo argomento (opzionale) può essere passato un oggetto Javascript.
 
+Leaflet intende i dati GeoJSON in WGS84 (lon, lat);
+
 <layer-geojson></layer-geojson>
 
 Un'interessante proprietà del layer GeoJSON è la possibilità di personalizzare lo style di ogni feature ad esempio in base alle proprietà della feature stessa.
@@ -71,12 +73,13 @@ In questo modo possiamo andare a verificare la proprietà specifica della featur
 
 ## Layer UI
 
-In Leaflet altro ai layers standard Vettoriali e Raster, esiste una terza categoria di Layer: I Layer UI o "Grafici" [**link**](https://leafletjs.com/reference-1.7.1.html#marker)
-Sono trattati allo stesso mdo degli altr Layers e rientrano in questa categoria:
+In Leaflet oltre ai layers standard **Vettoriali** e **Raster**, esiste una terza categoria di Layer: I Layer UI o "Grafici" [**link**](https://leafletjs.com/reference-1.7.1.html#marker)
 
-* **L.marker** che non è altro che un layer puntuale con la caratteristica ddi stile del marker (Esempio: ```js L.marker([50.5, 30.5]).addTo(map);```)
+Sono trattati allo stesso modo degli altr Layers e rientrano in questa categoria:
+
+* **L.marker** che non è altro che un layer puntuale con la caratteristica di stile del marker (Esempio: ```js L.marker([50.5, 30.5]).addTo(map);```)
 * **L.popup** per la visualizzazione dei popup su mappa
-* **L.tooltip** Visualizzazione dei tooltip (o informazioni rapide)
+* **L.tooltip** Visualizzazione dei tooltip (o informazioni rapide) visualizzate su mappa
 
 ## Concetto di Layer e Feature in Leaflet
 
