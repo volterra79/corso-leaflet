@@ -30,6 +30,12 @@ Un layer raster lo abbiamo gà utilizzato nella creazione della mappa e nell'agg
 
 <wmslayer></wmslayer>
 
+Se guardiamo bene come viene visualizzato il layer WMS, notiamo che invece di una singola immagine vengono richieste "tile" di 256px per 256px che vanno a comporre il layer WMS.
+
+Questo è dovuto al fatto che **L.tileLayer.WMS** è una sotto classe di **L.tileLayer** e quindi verranno effettuate n richieste di **GetMap** al server composte ognuna da un'immagine di 256px 256px.
+
+Più avanti quando andremo a parlare di Plugins, vediamo come richiedere una singola immagine invece che molte piccole immagini.
+
 ## Layer Vettoriali
 
 In Leaflet ogni oggetto aggiunto alla mappa viene considerato un Layer (Poligoni, Cerchi, Popup etc ..);

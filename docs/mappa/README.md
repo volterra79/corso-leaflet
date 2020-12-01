@@ -94,17 +94,13 @@ I principali metodi sono:
 
 * **getBounds()**- Ritorna l'ogetto **L.LatLngBounds**	
 
-  Ritorna il bound in coordinate geografiche dell'attuale mappa
+  Ritorna il bound in coordinate geografiche dell'attuale mappa (utile per fare poi le richieste ad esempio di **L.imageOverlay** che necessita il bounds)
 
 * **getSize()** - Ritorna un oggetto **L.Point**	
 
   Ritorna il size (larghezza e altezza in pixel) dell'elemento DOM  contenente la mappa 
   
-* **getPixelBounds()** - Ritorna oggetto **L.Bounds**	
-
-  Returns the bounds of the current map view in projected pixel coordinates (sometimes useful in layer and overlay implementations).
-
-* **project**(*LatLng* latlng, *Number* zoom) - Rstituisce un **L.Point**	
+* **project**(*LatLng* latlng, *Number* zoom) - Restituisce un **L.Point**	
 
   restituisce la coordinate del pixel relativa al CRS di origine.
 
