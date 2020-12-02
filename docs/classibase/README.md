@@ -4,19 +4,28 @@ title: Classi di Base
 
 ## Stuttura Leaflet
 
-Andiamo a vedere come è strutturato il codice Leaflet e come è possibile estenderlo per creare nuove funzionalità [**link**](https://leafletjs.com/examples/extending/extending-1-classes.html)
+Andiamo a vedere come è strutturato il codice **Leaflet** e come è possibile estenderlo per creare nuove funzionalità [**link**](https://leafletjs.com/examples/extending/extending-1-classes.html)
 
 <struttura></struttura>
 
-Per poter comprendedre meglio come funziona un plugin e come poter personalizzare la nostra applicazione è necessario conoscere le classi basi di Leaflet: 
+Per poter comprendere meglio come funziona un plugin e come poter personalizzare la nostra applicazione è necessario conoscere le classi basi di Leaflet. 
 
 ## L.Class
 
-Come si è visto dalla struttura del codice Leaflet [**L.Class**](https://leafletjs.com/reference-1.7.1.html#class)** è la classe padre da cui tutte le altre classi derivano (ad eccezione delle classi riguardandi la gestione del DOM e quelle riguardanti LatLng e Bounds).
+Come si è visto dalla struttura del codice **Leaflet** [**L.Class**](https://leafletjs.com/reference-1.7.1.html#class) è la classe padre da cui tutte le altre classi derivano (ad eccezione delle classi riguardandi la gestione del DOM e quelle riguardanti LatLng e Bounds).
 
 In aggiunta al modello classico di eredità supportato da Javascript (prototipale), essa introduce alcuni proprietà speciali per organizzare e svliluppare meglio il codice (**options**, **includes** e **statics** ad esempio).
 
 Capire come estendere  una classe Leaftlet aggiungendo/sostituendo metodi ci permette di poter creare "Oggetti personalizzati" e magari scrivere plugins che faranno al caso nostro.
+
+### Metodi (Eredità):
+
+* **L.Class.extend** : Funzione che prede un oggetto come parametro (attributi e metodi) per **estendere** la classe padre creado una classe figlio con attributi e metodi nuovi. In caso di metodi o attributi comuni, questo non va a redifinire/cambiare glia ttributi della classe padre.
+* **L.Class.include** : Come sopra ma la differenza è che se ci sono metodi/attributi in comune, sia tutte le attuali istanze create dalla classe padre che tutte le nuove istanze create dalla classe padre "acquisiranno" da quel momento in poi tali funzione/attributi modificati.
+  
+  Va a modificare direttamente direttamente i metodi e gli attributi del **prototype** della classe padre.
+* **L.Class.initialize** : Nella classe Javascript quando viene istanziata una classe viene chiamto il metodo **constructor**.
+    In Leaflet L.Class, il metodo constructor viene chiamato **initialize**.
 
 ```js
 //creo una classe corso che estende la classe base L.Class
@@ -38,14 +47,7 @@ const corso = new Corso("Leaflet");
 
 corso.presentati(); //==> restituirà in console il messaggio 'Ciao a tutti. Io sono il corso Leaflet'
 
-```
-### Metodi (Eredità):
-
-* **L.Class.extend** : Funzione che prede un oggetto come parametro (attributi e metodi) per **estendere** la classe padre creado una classe figlio con attributi e metodi nuovi. Ritorna una classe da instanziare
-* **L.Class.include** : Funzione che accetta sempre un oggetto Javascript come sopra ma che può intervenire in runtime per aggiungere/mergiare i metodi della classe così che tutte le classi e le istanze "acquisiranno".
-* **L.Class.initialize** : Nella classe Javascript quando viene istanziata una classe viene chiamto il metodo **constructor**.
-    In Leaflet’s L.Class, il metodo costructor viene chiamato **initialize**.
-    
+```    
     
 **Esempio L.extend**
 
