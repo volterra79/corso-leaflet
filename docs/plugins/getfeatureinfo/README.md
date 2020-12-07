@@ -4,11 +4,11 @@
 
 ## Single Tile WMS (Image)
 
-Prima di introdurre l'esempio sulla **GetFeatureInfo** andiamo a vedere come richiedere una singola immagine da un servizio WMS.
+Prima di addentrarci nell'esempio della **GetFeatureInfo** andiamo a vedere come richiedere una singola immagine (tile) da un servizio WMS tramite il Bounding Box della mappa.
 
-Abbiamo visto come visualizzare immagini da un server WMS quando abbiamo parlato dei layer Raster. Ma come abbiamo visto l'oggetto ** L.tileLayer.WMS** fa chiamate **GetMap** ma richiedendo immagini da 256px 256px;
+Abbiamo visto nel capitolo dei layer Rastercome richiedere un layer WMS. Abbiamo imparato che l'oggetto ** L.tileLayer.WMS** fa multi chiamate **GetMap** richiedendo immagini da 256px 256px che coprono l'intera area di mappa;
 
-Grazie al plugin possiamo richiedere una singola immagine che va a ricoprire l'intero Bounding Box della mappa.
+Grazie a questo plugin possiamo andare a richiedere una singola immagine invece di tante piccole tiles.
 
 Andiamo a vedere quali sono le principali caratteristiche offerte dal plugin:
 
@@ -23,7 +23,7 @@ Andiamo a vedere quali sono le principali caratteristiche offerte dal plugin:
   });
   
   const layer1 = source.getLayer("layer1");
-  const layer2 = source.getLayer("layer2")
+  const layer2 = source.getLayer("layer2");
   
   map.addLayer(layer1);
   map.addLayer(layer2);
