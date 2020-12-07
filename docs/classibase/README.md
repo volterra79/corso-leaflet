@@ -55,7 +55,7 @@ corso.presentati(); //==> restituirà in console il messaggio 'Ciao a tutti. Io 
 
 ### Attributi:
 
-* **options**:  E' un attributo speciale che permette di avere una configuazione della classe con la quale stabilire dei valori di default:
+* **options**:  E' un attributo speciale (oggetto javascript) che permette configurare la classe dei valori di default quando questi non sono passatti durante la creazione dell'istanza:
 
 **Esempio options**
 
@@ -64,7 +64,8 @@ corso.presentati(); //==> restituirà in console il messaggio 'Ciao a tutti. Io 
 ### Chiamare un metodo della Classe Padre
 
 E' possibile chiamare il metodo della classe padre all'interno della classe figlio mediante la propietà **prototype** (Javascript) della classe Padre.
-Un sempio di come è scritta la classe L.FeatureGroup che è una sotto classe di L.LayerGroup:
+
+Un esempio di come è scritta la classe L.FeatureGroup che è una sotto classe di L.LayerGroup:
 
 Esempio:
 
@@ -82,14 +83,18 @@ L.FeatureGroup = L.LayerGroup.extend({
 
 ```
 
+**Nota**: La differenza tra i metodi **.call** e **.apply** di una funzione in Javascript è che il primo accetta una sequenza di argomenti seperati da virgola, mentre il secondo accetta un array di argomenti.
+
 ## initHook
 
-Inoltre se vogliamo che la nostra classe compia un'azione durante la fase di inizializzazione questo è possibile farlo tramite il metodo **addInitHook** della Classe.
-Questo metodo è utile nel caso in cui volessimo sviluppare un plugin in quanto di permette di intervenire durante l'inizializzazione di una classe di Leaflet.
+Se vogliamo che la nostra classe compia un'azione durante la fase di inizializzazione, questo è possibile farlo tramite il metodo **addInitHook** della Classe.
+
+Ci permette di intervenire durante l'inizializzazione di una classe di Leaflet.
+
 Se si passa una funzione è importante ricorardi che **this** si riferisce all'istanza della classe a cui abbiamo invocato il metodo ***initHook*
 
-
 Si possono utilizzare due modi:
+
 
 1) **Classe.initHook(function(){......})**
 

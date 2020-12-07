@@ -4,14 +4,14 @@ title: Tipi base
 
 In Leafleft ci sono alcuni tipi di base che vengono utilizzati dalle altri classi:
 
-* **LatLng**: Rappresenta un punto geografico (**Latitudine** e **Longitudine**).
+* **LatLng** [**link**](https://leafletjs.com/reference-1.7.1.html#latlng): Rappresenta un punto di coordinate geografiche (**Latitudine** e **Longitudine**).
     
   ```js 
     const latlng = L.latLng(50.5, 30.5);
     map.panTo(latlng);
   ```  
            
-* **LatLngBounds**: Rappresenta un'area rettangolare. Necessita dei sue punti situati sulla diagonale (lower-left/upper-right o viceversa)
+* **LatLngBounds**: Rappresenta il Bounding Box. Necessita dei due punti situati sulla diagonale del rettangolo (lower-left/upper-right o viceversa)
 
   ```js
     const corner1 = L.latLng(40.712, -74.227);
