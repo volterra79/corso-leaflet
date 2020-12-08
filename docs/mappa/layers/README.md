@@ -76,16 +76,21 @@ Un'interessante proprietà del layer GeoJSON è la possibilità di personalizzar
 Passando il secondo argomento quando si costruisce il layer, e come chiavae passiamo **style**, questa deve essere una funzione che accetta come parametro la feature del geoJSON.
 In questo modo possiamo andare a verificare la proprietà specifica della feature e ritornare l'oggetto style (vedi sopra) che deve essere aplicato a quel tipo di feature specifica.  
 
-
 ## Layer UI
 
-In Leaflet oltre ai layers standard **Vettoriali** e **Raster**, esiste una terza categoria di Layer: I Layer UI o "Grafici" [**link**](https://leafletjs.com/reference-1.7.1.html#marker)
+In Leaflet oltre ai layers standard **Vettoriali** e **Raster**, esiste una terza categoria di Layer: I **Layer UI** o "Grafici" [**link**](https://leafletjs.com/reference-1.7.1.html#marker)
 
-Sono trattati allo stesso modo degli altr Layers e rientrano in questa categoria:
+Sono trattati allo stesso modo degli altri layers e rientrano in questa categoria:
 
-* **L.marker** che non è altro che un layer puntuale con la caratteristica di stile del marker (Esempio: ```js L.marker([50.5, 30.5]).addTo(map);```)
-* **L.popup** per la visualizzazione dei popup su mappa
-* **L.tooltip** Visualizzazione dei tooltip (o informazioni rapide) visualizzate su mappa
+* [**L.marker**](https://leafletjs.com/reference-1.7.1.html#marker) che non è altro che un layer puntuale con la caratteristica di stile del marker
+   
+* [**L.popup**](https://leafletjs.com/reference-1.7.1.html#popup) per la visualizzazione dei popup su mappa
+
+* [**L.tooltip**](https://leafletjs.com/reference-1.7.1.html#tooltip) Visualizzazione di brevi testi **tooltip** sui vari layer della mappa.
+                                                                       
+
+<marker-popup-tooltip></marker-popup-tooltip>
+
 
 ## Concetto di Layer e Feature in Leaflet
 
