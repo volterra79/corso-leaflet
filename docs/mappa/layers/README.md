@@ -11,10 +11,28 @@ Come in ogni software grafico e GIS l’ordine di rappresentazione dei layer è 
 <img src="/corso-leaflet/assets/img/layers_stack.png" title="Pila dei layer"/>
 
 
-## Map Panes [**link**](https://leafletjs.com/reference-1.7.1.html#map-pane)
+## Map Panes
 
-Leaflet utilizza il concetto di **Map Panes** per l'ordinamento dei layers su mappa.
-**Panes** non sono altro che elementi DOM che sono utlizzazi per gestire l'ordine "piramidale" o di "stack" degli elementi all'interno della mappa.
+Leaflet utilizza il concetto di [**Map Panes**](https://leafletjs.com/reference-1.7.1.html#map-pane) per l'ordinamento dei layers su mappa.
+
+**Panes** non sono altro che elementi DOM che sono utlizzati per gestire l'ordine "piramidale" o di "stack" degli elementi all'interno della mappa.
+
+E' possibile recuperare i pans della mappa tramite i metodi **map.getPane** or **map.getPanes** oppure creare un nuovo pane tramite il metodo **map.createPane**.
+
+Leaflet segue questo ordine:
+
+* TileLayers e GridLayers
+
+* Paths, polylines, GeoJSON layers, etc.. layer vettoriali
+
+* Marker 
+
+* Popups
+
+
+[**Tutorial Leaflet**](https://leafletjs.com/examples/map-panes/)
+
+<map-panes></map-panes>
 
 ## Layer Raster 
 
@@ -24,7 +42,6 @@ I layer Raster gestiti dal core di Leaflet sono:
 * Layer WMS [**link**](https://leafletjs.com/reference-1.7.1.html#tilelayer-wms)
 * Image Overlay [**link**](https://leafletjs.com/reference-1.7.1.html#imageoverlay)
 
-Un layer raster lo abbiamo gà utilizzato nella creazione della mappa e nell'aggiunta del primo layer OSM
 
 ### Esempio WMS
 
@@ -36,10 +53,11 @@ Questo è dovuto al fatto che **L.tileLayer.WMS** è una sotto classe di **L.til
 
 Più avanti quando andremo a parlare di Plugins, vediamo come richiedere una singola immagine invece che molte piccole immagini.
 
-## Layer Vettoriali
+## Layer Vettoriali 
 
 In Leaflet ogni oggetto aggiunto alla mappa viene considerato un Layer (Poligoni, Cerchi, Popup etc ..);
-Di seguito le diverse tipologie di geometria che un layer può avere:
+
+Di seguito le diverse tipologie di geometria che un layer può avere [**link**](https://leafletjs.com/reference-1.7.1.html#path):
 
 * **L.circle** Disegnare un cerchio. Deve essere passato come primo argomento il punto in mappa (lat, lon) 
 
@@ -60,6 +78,8 @@ Leafleft, come Openlayers, utilizza una colorazione di default (di solito blu)  
 Per poter distingure elementi di una tipologia rispetto ad un'altra o far capire l'entità di un determinato fenomeno rispetto ad un altro è necessario ricorrere ad una personalizazzione dello stile del layer.
 Come secondo argomento nella creazione del layer è possibile passare un oggetto javascript contenete varie opzioni per visualizzare il nostro layer.
 L'oggetto passatto sarà utile a costruire l'oggetto stile che non è altro a seconda del layer un'estensione della classe astratta [**L.path**](https://leafletjs.com/reference-1.7.1.html#path).
+
+<vector-style></vector-style>
 
 Inoltre ogni Layer è un'estensione della classe base **L.path** e quindi ne deriva che in ogni momento possiamo settare lo style attraverso la funzione *setStyle*
 
@@ -89,8 +109,6 @@ $.getJSON("orders.json", function(data) {
 }
 
 ````
-
-
 
 ## Layer UI
 
