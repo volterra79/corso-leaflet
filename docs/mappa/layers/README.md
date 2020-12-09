@@ -65,8 +65,9 @@ Inoltre ogni Layer è un'estensione della classe base **L.path** e quindi ne der
 
 ## Layer GeoJSON
 
-Un'altra tipologia di layer vettoriale che ricorre nei progetti è scuramente il tipo [**GeoJSON**](https://leafletjs.com/reference-1.7.1.html#geojson)
-Come primo argomento si deve passare il dato in formato **geoJSON**. Come secondo argomento (opzionale) può essere passato un oggetto Javascript.
+Un altro tipo di layer vettoriale che viene spesso utilizzato nei progetti è scuramente il tipo [**GeoJSON**](https://leafletjs.com/reference-1.7.1.html#geojson)
+
+Come primo argomento si deve passare il dato in formato **GeoJSON**. Come secondo argomento (opzionale) può essere passato un oggetto Javascript.
 
 Leaflet intende i dati GeoJSON in WGS84 (lon, lat);
 
@@ -74,7 +75,22 @@ Leaflet intende i dati GeoJSON in WGS84 (lon, lat);
 
 Un'interessante proprietà del layer GeoJSON è la possibilità di personalizzare lo style di ogni feature ad esempio in base alle proprietà della feature stessa.
 Passando il secondo argomento quando si costruisce il layer, e come chiavae passiamo **style**, questa deve essere una funzione che accetta come parametro la feature del geoJSON.
-In questo modo possiamo andare a verificare la proprietà specifica della feature e ritornare l'oggetto style (vedi sopra) che deve essere aplicato a quel tipo di feature specifica.  
+In questo modo possiamo andare a verificare la proprietà specifica della feature e ritornare l'oggetto style (vedi sopra) che deve essere applicato a quel tipo di feature specifica. 
+
+Da osservare che **L.geoJSON** accetta come primo argomento i dati in formato GeoJSON. Se abbiamo bisogno di recuperare i dati da un servizio è necessario fare prima la chiamata al server e poi creare il layer geoJSON
+
+```js
+//Esempio con JQuery
+
+$.getJSON("orders.json", function(data) {
+    L.geoJson(data, {
+      //parametri
+    }).addTo(map);
+}
+
+````
+
+
 
 ## Layer UI
 
