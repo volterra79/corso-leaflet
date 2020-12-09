@@ -2,11 +2,20 @@
 
 ## Ordinamento dei layer nella mappa
 
-Come in ogni software grafico e GIS l’ordine di rappresentazione dei layer è un elemento fondamentale per la corretta visualizzazione dei loro contenuti. La logica è semplice:
+Come in ogni software grafico e GIS l’ordine di rappresentazione dei layer è un elemento fondamentale per la corretta visualizzazione dei loro contenuti.
+ 
+La logica è semplice:
 
-* le basi cartografiche di sfondo (**baselayers**), come ad esempio il layer OpenStreetMap o l’ombreggiatura di un DTM, stanno nella posizione più bassa della pila di layers
+* le basi cartografiche di sfondo (**baselayers**), come ad esempio il layer OpenStreetMap, un DTM etc .. occuperanno la posizione più bassa della pila di layers
+
 * gli strati contenenti elementi poligonali stanno al di sotto di quelli contenenti elementi lineari (**overlay**)
+
 * gli strati con elementi lineari stanno al di sotto di quelli contenenti elementi puntuali (**overlay**)
+
+* gli starti puntuali stanno al di sopra di ogni layer (**overlay**)
+
+* elementi grafici(tooltip, etc ..) al di sopra di tutto
+
 
 <img src="/corso-leaflet/assets/img/layers_stack.png" title="Pila dei layer"/>
 
@@ -17,7 +26,7 @@ Leaflet utilizza il concetto di [**Map Panes**](https://leafletjs.com/reference-
 
 **Panes** non sono altro che elementi DOM che sono utlizzati per gestire l'ordine "piramidale" o di "stack" degli elementi all'interno della mappa.
 
-E' possibile recuperare i pans della mappa tramite i metodi **map.getPane** or **map.getPanes** oppure creare un nuovo pane tramite il metodo **map.createPane**.
+E' possibile recuperare i Panes della mappa tramite i metodi **map.getPane** or **map.getPanes** oppure creare un nuovo pane tramite il metodo **map.createPane**.
 
 Leaflet segue questo ordine:
 
@@ -55,33 +64,39 @@ Più avanti quando andremo a parlare di Plugins, vediamo come richiedere una sin
 
 ## Layer Vettoriali 
 
-In Leaflet ogni oggetto aggiunto alla mappa viene considerato un Layer (Poligoni, Cerchi, Popup etc ..);
+In Leaflet ogni oggetto aggiunto alla mappa viene considerato un Layer (Poligoni, Linee, etc ..);
 
 Di seguito le diverse tipologie di geometria che un layer può avere [**link**](https://leafletjs.com/reference-1.7.1.html#path):
 
-* **L.circle** Disegnare un cerchio. Deve essere passato come primo argomento il punto in mappa (lat, lon) 
+* **L.circle** Disegnare un cerchio. Deve essere passato come primo argomento il punto in mappa (latitudine, longitudine) 
 
-* **L.polyline** Disegnare Linee. Deve essere passato come primo argomento un array di coordinate
+* **L.polyline** Disegnare Linee. Deve essere passato come primo argomento un array di coordinate geografiche 
+```js
+ [[lat1, lon1], [lat2, lon2]]
+```
 
-* **L.polygon** Disegnare Poligoni. Deve essere passato come primo argomento un array di 
+* **L.polygon** Disegnare Poligoni. Deve essere passato come primo argomento un array di coordinate geografiche  (possibile costruire buchi o multipoligoni)
 
 * **L.rectangle** Disegnare rettangoli. Deve essere passato come primo argomento un array contenete i due punti che definiscono i due punti opposti della diagonale.
 
-ed altri che al momento non interessano.
+ed altri ancora.
 
-Tutti i Layers sopra accettano poi un secondo parametro un oggetto contenente le opzione sullo stile del layer
+Tutti i Layers sopra accettano poi un secondo parametro che permette di gestire lo stile del layer.
 
 ### Stili
 
 La visualizzazione grafica del layer su mappa è uno degli aspetti importanti nella creazione di una mappa di facile lettura.
-Leaflet, come Openlayers, utilizza una colorazione di default (di solito blu)  per visualizzare ogni tipologia di layer vettoriale su mappa. 
+Leaflet, come Openlayers, utilizza una colorazione di default (di solito blu)  per visualizzare ogni tipo di layer vettoriale su mappa. 
+
 Per poter distingure elementi di una tipologia rispetto ad un'altra o far capire l'entità di un determinato fenomeno rispetto ad un altro è necessario ricorrere ad una personalizazzione dello stile del layer.
+
 Come secondo argomento nella creazione del layer è possibile passare un oggetto javascript contenete varie opzioni per visualizzare il nostro layer.
-L'oggetto passatto sarà utile a costruire l'oggetto stile che non è altro a seconda del layer un'estensione della classe astratta [**L.path**](https://leafletjs.com/reference-1.7.1.html#path).
+
+L'oggetto passatto sarà utile a costruire lo stile che non è altro a seconda del layer un'estensione della classe astratta [**L.path**](https://leafletjs.com/reference-1.7.1.html#path).
 
 <vector-style></vector-style>
 
-Inoltre ogni Layer è un'estensione della classe base **L.path** e quindi ne deriva che in ogni momento possiamo settare lo style attraverso la funzione *setStyle*
+Infine ogni **Layer** è un'estensione della classe base **L.Path** e quindi ne deriva che in ogni momento possiamo settare lo style attraverso la funzione *setStyle*
 
 ## Layer GeoJSON
 

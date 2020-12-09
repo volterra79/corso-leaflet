@@ -60,7 +60,7 @@ Aggiungiamo alla mappa il layer di OpenStreetmap (OSM)
 
 ## Metodi utili dell'oggetto mappa
 
-Come si può vedere dalla documentazione [**link**](https://leafletjs.com/reference-1.7.1.html#map-methods-for-modifying-map-state), l'oggetto mappa possiede una serie di metodi (funzioni) che possono essere utili per il cambio di "Stato" della mappa che ottene informazioni utili.
+Come si può vedere dalla [**documentazione**](https://leafletjs.com/reference-1.7.1.html#map-methods-for-modifying-map-state), la classe **L.Map** possiede una serie di metodi (funzioni) che possono essere utili per interagire con la mappa che ottene informazioni utili.
 
 I principali metodi sono:
 
@@ -129,3 +129,6 @@ I principali metodi sono:
         layer.bindPopup('Hello');
       });
     ```
+* **openPopup**(*Popup* popup): functione che apre uno specifico popup
+
+e molti altri ancora ..	  
