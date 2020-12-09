@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: https://leafletjs.com/docs/images/logo.png
-heroText: Corso Leaftlet.js
+heroText: Corso Leaflet.js
 tagline: 
 actionText: Inizia il Corso
 actionLink: /introduzione/
