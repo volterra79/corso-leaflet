@@ -1,7 +1,7 @@
 module.exports = {
   home: true,
   title: 'Corso Leaflet',
-  description: 'Corso base Leaflet',
+  description: 'Corso Leaflet',
   base: '/corso-leaflet/',
   head: [
     ['script', { src: 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.js' }],
