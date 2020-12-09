@@ -21,8 +21,6 @@ Un Esempio su tutti: se la tua applicazione necessita di supportare layers con d
 
 Una cosa da dire è che OL, avendo un'API complessa, la curva di apprendimento sarà più lenta ma sicuramente permetterà di costruire applicazione più complesse e robuste.
 
-Altra cosa positiva è che se uno ha già esperienza con altre librerie di gestione mappe, le coordinate in OpenLayers sono in formato Longitudine/Latitudine e non come **Leaflet** in Latitudine/Longitudine.
-
 ## Struttura del codice
 
 In generale **Leaflet** si può considerare una libreria più di "alto livello" rispetto a OpenLayers. Questo significa che in **Leaflet** molte cose sono delegate alla liberia internamente, lasciando l'utente di scrivere meno codice.
@@ -80,7 +78,7 @@ OpenLayers supporta **GeoJSON**, **KML**, **GML** e tutti i formati standard.
 
 **Leaflet** usa come sistema di proiezione per la mappa **ESPG:3857** e tutto ciò che riguarda le coordinate in **LatLon** gradi (centro mappa, bounds, etc..).
 
-**Openlayers** utilizza di default **EPSG:3857** per la mappa e per le coordinate he riguardano la mappa lo stesso sistema di riferimento. Inoltre a differenza di **Leaflet** le coordinate geografiche seguono lo standar GIS **Longitudine/Latitudine**.
+**Openlayers** utilizza di default **EPSG:3857** sia per mappa e sia per le coordinate che riguardano la mappa. Inoltre a differenza di **Leaflet** le coordinate geografiche seguono lo standar GIS **Longitudine/Latitudine**.
 
 ### Proiezioni 
 
