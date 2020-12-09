@@ -2,7 +2,7 @@
 title: Tipi base
 ---
 
-In Leafleft ci sono alcuni tipi di base che vengono utilizzati dalle altri classi:
+In Leaflet ci sono alcuni tipi di base che vengono utilizzati dalle altri classi:
 
 * **LatLng** [**link**](https://leafletjs.com/reference-1.7.1.html#latlng): Rappresenta un punto di coordinate geografiche (**Latitudine** e **Longitudine**).
     

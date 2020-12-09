@@ -59,9 +59,18 @@ Creare il file index.html con la seguente struttura
 
 dove
 
-**CSS** Stile
+**CSS**
 
-Stile per poter visulizzare la mappa all'interno della nostra pagina (da cambiare a seconda delle esigenze)
+Leaflet CSS
+
+``` css
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+ integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+ crossorigin=""/>
+```
+
+
+Stile per poter visualizzare la mappa all'interno della nostra pagina (da cambiare a seconda delle esigenze)
 
 ```css
  <style>
@@ -78,15 +87,8 @@ Stile per poter visulizzare la mappa all'interno della nostra pagina (da cambiar
     }
   </style>    
 ```
-Style css di Leafleft
 
-``` css
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
- integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
- crossorigin=""/>
-```
-
-**JS** Javascript
+**JS**
 
 ```js
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"

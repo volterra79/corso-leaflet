@@ -74,7 +74,7 @@ Tutti i Layers sopra accettano poi un secondo parametro un oggetto contenente le
 ### Stili
 
 La visualizzazione grafica del layer su mappa è uno degli aspetti importanti nella creazione di una mappa di facile lettura.
-Leafleft, come Openlayers, utilizza una colorazione di default (di solito blu)  per visualizzare ogni tipologia di layer vettoriale su mappa. 
+Leaflet, come Openlayers, utilizza una colorazione di default (di solito blu)  per visualizzare ogni tipologia di layer vettoriale su mappa. 
 Per poter distingure elementi di una tipologia rispetto ad un'altra o far capire l'entità di un determinato fenomeno rispetto ad un altro è necessario ricorrere ad una personalizazzione dello stile del layer.
 Come secondo argomento nella creazione del layer è possibile passare un oggetto javascript contenete varie opzioni per visualizzare il nostro layer.
 L'oggetto passatto sarà utile a costruire l'oggetto stile che non è altro a seconda del layer un'estensione della classe astratta [**L.path**](https://leafletjs.com/reference-1.7.1.html#path).
