@@ -5,23 +5,29 @@ title: Leaflet vs Openlayers
 
 **Leaflet**
 
-Se abbiamo bisogno di costruire un'applicazione WebGis che richeiede funzionalità di base **Leaflet** è la scelta giusta.
+Se abbiamo bisogno di costruire un'applicazione WebGis che richiede funzionalità di base **Leaflet** è la scelta giusta.
+
 **Leaflet**  permette di visualizzare diversi tipi di layer, zoomare e muoversi nella mappa e le sue API sono semplici da capire e facili da usare.
+
 Una volta però che si decide di andare ***oltre*** alle funzioni base, dobbiamo ricorrere ai **Plugins** e qui le cose si complicano richiedendo anche di creare delle funzionalità personalizzate che  non sempre sono facili da sviluppare.
 
 **Openlayers**
 
 Per applicazione WebGis che necessitano di funzionalità avanzate( esempio lavorare con proiezioni diverse da quelle standard EPSG:4326, EPSG:3857) la scelta cadrà su **Openlayers**.
-OpenLayers ha una vasta e complessa API che permette di sviluppare tutte le cose che si possono fare con Leaflet più altre di tipo avanzato.
-Un sempio su tutti: se la tua applicazione necessita di supportare layers con diverse proiezioni,  **OpenLayers** te o permette in modo semplice.
-Una cosa da dire è che OL, avendo un'API complessa, la curva di apprendimento per prendere dimsitechezza conil codice sarà più lenta, ma sicuramente permetterà di costruire applicazione più complesse e robuste.
-Altra cosa che può mettere in confusione se uno ha già esperienza con altre librerie di gestione mappe, che le coordinate in OpenLayers non sono in formato LatLon, ma in LonLat che è il modo corretto dal punto di vista GIS.
+
+OpenLayers ha un'ampia API che permette di sviluppare tutte le cose che si possono fare con Leaflet più altre di tipo avanzato.
+
+Un Esempio su tutti: se la tua applicazione necessita di supportare layers con diverse proiezioni, **OpenLayers** lo permette in modo semplice.
+
+Una cosa da dire è che OL, avendo un'API complessa, la curva di apprendimento sarà più lenta ma sicuramente permetterà di costruire applicazione più complesse e robuste.
+
+Altra cosa positiva è che se uno ha già esperienza con altre librerie di gestione mappe, le coordinate in OpenLayers sono in formato Longitudine/Latitudine e non come **Leaflet** in Latitudine/Longitudine.
 
 ## Struttura del codice
 
-In generale **Leaflet** si può considerare una libreria più di "alto livello" rispetto a Openlayers. Questo significa che in **Leaflet** molte cose sono delegate alla liberia internamente, lassciando l'utente di scrivere meno codice.
+In generale **Leaflet** si può considerare una libreria più di "alto livello" rispetto a OpenLayers. Questo significa che in **Leaflet** molte cose sono delegate alla liberia internamente, lasciando l'utente di scrivere meno codice.
 
-**Openlayers** invece ha una struttura più "gerarchica" e "modulare" in modo tale da scomporre le varie parti che compongono la libreria in modo tale che ognuna faccia solo un compito specifico
+**Openlayers** invece ha una struttura più "gerarchica" e "modulare" in modo tale ogni sua parte sia adibita ad una specifica funzione.
 
 Lo possiamo vedere dal seguente codice:
 
@@ -84,7 +90,8 @@ OpenLayers supporta **GeoJSON**, **KML**, **GML** e tutti i formati standard.
 
 * Può utilizzare un Sistema di riferimento alla volta. Non è possibile avere Layer in un sistema di riferimento diverso da quello della mappa
 
-* la traformazione tra coordinate di un sistema di riferimento ad un altro non è gestita dalla libreria. Dobbiamo utilizzare la libreria [**proj4s**](http://proj4js.org/) per fare conversioni
+* la trasformazione tra coordinate di un sistema di riferimento ad un altro non è gestita dalla libreria se non tramite i metodi **project** e **unproject** del sistema di riferimento
+  e coordinate geografiche. Per trasformare le coordinate tra sistemi di riferimento dobbiamo utilizzare la libreria [**proj4s**](http://proj4js.org/) per fare conversioni
   
   ```js
   proj4('EPSG:3045','EPSG:4326', [429482.6500978756, 4552418.298212856]) // restituisce [14.159999999999998, 41.11999999999998] Longitudine/Latitudine
@@ -94,7 +101,7 @@ OpenLayers supporta **GeoJSON**, **KML**, **GML** e tutti i formati standard.
 
 * Necessita della libreria **proj4j** per aggiungere nuove proiezioni da quelle standard ma si integra alla perfezione con la liberia OL
 
-* Possiamo utilizzare layers con diversi Sistemi di reiferimento tra loro e la libreria pensa alla riproiezione
+* Possiamo utilizzare layers con diversi Sistemi di Riferimento tra loro e la libreria pensa alla riproiezione
 
 * La trasformazione di coordinate da un sistema di riferimento all'altro è semplice utlizzando il metodo statico **ol.proj.transform(coordinates, ProiezioneCoordinate, ProiezioneFinale)**
 
@@ -103,24 +110,28 @@ OpenLayers supporta **GeoJSON**, **KML**, **GML** e tutti i formati standard.
 
 **Leaflet** ha il concetto di **Handler** come funzione (e non elemento grafico) che ha lo scopo di reagire al cambiamento di stato della mappa
 
-**Openlayer** ha il concetto di **Interaction** che h lo stesso significato di Leaflet. Gestisce (senza elemento grafico) il cambiamento di stato della mappa
+**Openlayer** ha il concetto di **Interaction** che ha lo stesso significato di Leaflet. Gestisce (senza elemento grafico) il cambiamento di stato della mappa
  
 
 ## Layer e Feature
 
 Come già detto, in Leaflet tutti gli elementi della mappa sono considerato **Layer**.
 
-In **OpenLayers** invece c'è ben chiara e netta la distizione tra oggetto **Layer** e **Feature**. Ogni classe ha i propri metodi e attributi.
+In **OpenLayers** invece c'è ben chiara e netta la distinzione tra oggetto **Layer** e **Feature**. Ogni classe ha i propri metodi e attributi.
 
 ## Conclusione
 
-In conclusione non è una vera e propria risposta su cosa scelgiere tra **Leaflet** e **Openalyers**.
-Come scritto sopra, se la mappa e le sue funzionalità sono semplice e dove sviluppare un'applicazione veloce, con pochi dati, Leaflet sarà la scelta giusta.
-Nel caso in cui dovrete pensare ad un'applicazione più complessa, che richiede tante funzionalità, tanti layers da gestire e pensate di aggiungere delle funzionalità personalizzate, Openlayers sarà la scelta giusta.
+In conclusione non esiste una vera e propria risposta su quale libreria scegliere tra **Leaflet** e **OpenLayers**.
+
+Come scritto sopra, se la mappa e le sue funzionalità sono semplice e abbiamo bisogno di sviluppare un'applicazione in modo veloce, con pochi dati, Leaflet sarà la scelta giusta.
+
+Nel caso in cui state pensando di sviluppare un'applicazione più complessa e che richiede tante funzionalità, tanti layers da gestire e pensate di aggiungere delle funzionalità personalizzate, OpenLayers sarà la scelta giusta.
 
 Sotto è riportato un link aluni esempi di sviluppo fatte con **Leaflet** e sia con **Openlayers**
 
-Un'ultima cosa. Qualsisiasi sarà la vostra scelta, una cosa sarà importante, come per tutte le librerie/frameweork ch userere. Dovete conoscere bene il **Javascript**
-
-
 Questo [**link**](https://astuntechnology.github.io/osgis-ol3-leaflet/index.html) potete vede alcuni esempi scritti in OpenLayer che in Leaflet
+
+
+**Nota importante**: Qualsiasi sarà la vostra scelta, la cosa fondamentale è conscere almeno le basi del linguaggio **Javascript**
+
+

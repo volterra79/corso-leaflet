@@ -4,7 +4,9 @@ title: Controlli
 
 ## Che cosa è un controllo
 
-Un controllo (**L.Control**) è un elemento HTML, quindi grafico, che si posiziona all'interno del contenitore della mappa. Tramite l'interazione con il controllo creato è possibile interagire con la mappa.
+Un controllo (**L.Control**) è un elemento HTML, quindi grafico, che si posiziona all'interno del contenitore della mappa.
+ 
+Tramite l'interazione con il controllo creato è possibile interagire con la mappa.
 
 Tutti i controllo derivano dalla classe padre [**L.Control**](https://leafletjs.com/reference-1.7.1.html#control) che ha come opzione la posizione dove verrà inserito sopra la mappa:
 I valori possibili sono:

@@ -20,7 +20,7 @@ Capire come estendere  una classe Leaftlet aggiungendo/sostituendo metodi ci per
 
 ### Metodi (Eredità):
 
-* **L.Class.extend** : Funzione che prede un oggetto come parametro (attributi e metodi) per **estendere** la classe padre creado una classe figlio con attributi e metodi nuovi. In caso di metodi o attributi comuni, questo non va a redifinire/cambiare glia ttributi della classe padre.
+* **L.Class.extend** : Funzione che prede un oggetto come parametro (attributi e metodi) per **estendere** la classe padre creado una classe figlio con attributi e metodi nuovi. In caso di metodi o attributi comuni, questo non va a redifinire/cambiare gli attributi della classe padre.
 * **L.Class.include** : Come sopra ma la differenza è che se ci sono metodi/attributi in comune, sia tutte le attuali istanze create dalla classe padre che tutte le nuove istanze create dalla classe padre "acquisiranno" da quel momento in poi tali funzione/attributi modificati.
   
   Va a modificare direttamente direttamente i metodi e gli attributi del **prototype** della classe padre.
@@ -55,7 +55,7 @@ corso.presentati(); //==> restituirà in console il messaggio 'Ciao a tutti. Io 
 
 ### Attributi:
 
-* **options**:  E' un attributo speciale (oggetto javascript) che permette configurare la classe dei valori di default quando questi non sono passatti durante la creazione dell'istanza:
+* **options**:  E' un attributo speciale (oggetto javascript) che permette configurare la classe con dei valori di default quando questi non sono forniti al momento della creazione dell'istanza
 
 **Esempio options**
 

@@ -104,15 +104,19 @@ Un altro tipo di layer vettoriale che viene spesso utilizzato nei progetti è sc
 
 Come primo argomento si deve passare il dato in formato **GeoJSON**. Come secondo argomento (opzionale) può essere passato un oggetto Javascript.
 
-Leaflet intende i dati GeoJSON in WGS84 (lon, lat);
+**Nota**: Leaflet intende i dati GeoJSON in WGS84 (latitudine, longitudine).
 
 <layer-geojson></layer-geojson>
 
 Un'interessante proprietà del layer GeoJSON è la possibilità di personalizzare lo style di ogni feature ad esempio in base alle proprietà della feature stessa.
-Passando il secondo argomento quando si costruisce il layer, e come chiavae passiamo **style**, questa deve essere una funzione che accetta come parametro la feature del geoJSON.
-In questo modo possiamo andare a verificare la proprietà specifica della feature e ritornare l'oggetto style (vedi sopra) che deve essere applicato a quel tipo di feature specifica. 
 
-Da osservare che **L.geoJSON** accetta come primo argomento i dati in formato GeoJSON. Se abbiamo bisogno di recuperare i dati da un servizio è necessario fare prima la chiamata al server e poi creare il layer geoJSON
+Passando come secondo argomento un oggetto Javascript contenente la chiave **style** è possibile gestire lo stile. Questa deve essere una funzione che accetta come parametro la feature del geoJSON.
+
+In questo modo possiamo andare a verificare la proprietà specifica della feature e ritornare l'oggetto style (vedi esempio sopra) che deve essere applicato a quel tipo di feature specifica. 
+
+Infine da osservare che **L.geoJSON** accetta come primo argomento i dati in formato GeoJSON.
+
+Se abbiamo bisogno di recuperare i dati da un servizio è necessario fare prima la chiamata al server e poi creare il layer geoJSON
 
 ```js
 //Esempio con JQuery
