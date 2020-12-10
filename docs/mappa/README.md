@@ -25,7 +25,7 @@ La funzione "factory" (vedremo più tardi che cosa è) [**L.map**](https://leafl
    
 2) Un secondo parametro (opzionale) deve essere un oggetto Javascript (chiave/valore) [**link**](https://leafletjs.com/reference-1.7.1.html#map-option)
    
-   Nell'esempio sopra abbiamo passato il valore dello **zoom** e il **centro mappa** (questo necessariamente in latitudine e longitudine)
+   Nell'esempio sopra abbiamo passato il valore dello **zoom** e il **centro mappa** (questo necessariamente in coordinate geografiche Latitudine/Longitudine in questo ordine)
 
 
 È necessario specificare il css del contenitore per visualizzare la mappa
