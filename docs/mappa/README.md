@@ -16,7 +16,7 @@ La funzione "factory" (vedremo più tardi che cosa è) [**L.map**](https://leafl
 
 1) Il primo può essere una **Stringa** contenente l'*id* dell'elemento (come abbiamo fatto sopra) oppure un elemento HTML.
 
-   Nel nostro esempio abbiamo utilizzato il l'*id* 
+   Nel nostro esempio abbiamo utilizzato l'*id* dell'elemento.
    
    ```html
    <div id="map"></div>
@@ -82,7 +82,7 @@ I principali metodi sono:
 
 * **fitBounds**(*LatLngBounds* bounds, *fitBounds options* options?) - Ritorna l'oggetto mappa		
 
-  Sets a map view that contains the given geographical bounds with the maximum zoom level possible.
+  Posiziona la mappa in modo tale da contenere il Bounding Box che è stato passato.
 
 * **getCenter()** - Ritorna	l'ogetto **L.LatLng**	
 
@@ -102,7 +102,7 @@ I principali metodi sono:
   
 * **project**(*LatLng* latlng, *Number* zoom) - Restituisce un **L.Point**	
 
-  restituisce la coordinate del pixel relativa al CRS di origine.
+  Restituisce la coordinate del pixel relativa al CRS di origine.
 
 * **unproject**(*Point* point, *Number* zoom) - Restituisce	l'oggetto **L.LatLng**	
 
@@ -110,7 +110,7 @@ I principali metodi sono:
 
 * **distance**(*LatLng* latlng1, *LatLng* latlng2)	- Restituisce un numero	
 
-  Ritorna la distanza tra due punti geografici in accordo al CRS della mappa. di Default questa misura è data in metri.
+  Ritorna la distanza tra due punti geografici in accordo al CRS della mappa. Di default questa misura è data in metri.
   
 * **addControl**(*Control* control) - Restituisce la mappa
   
@@ -118,17 +118,17 @@ I principali metodi sono:
   
 * **addLayer**(*Layer* layer) - Ritorna la mappa
 	
-    Aggiunge il layer alla mappa
+   Aggiunge il layer alla mappa
     
 * **eachLayer**(*Function* fn, *Object* context?) - Ritorna l'oggetto mappa
 	
-    Itera su tutti i layer dalla mappa, Opzionalmento può essere passato il contesto della funzione (il this)
+   Itera su tutti i layer dalla mappa, Opzionalmento può essere passato il contesto della funzione (il this)
     
     ```js
-      map.eachLayer(function(layer){
+      map.eachLayer(layer => {
         layer.bindPopup('Hello');
       });
     ```
-* **openPopup**(*Popup* popup): functione che apre uno specifico popup
+* **openPopup**(*Popup* popup): Funzione che apre lo specifico popup passato come parametro
 
 e molti altri ancora ..	  

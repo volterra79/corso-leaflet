@@ -68,16 +68,16 @@ In Leaflet ogni oggetto aggiunto alla mappa viene considerato un Layer (Poligoni
 
 Di seguito le diverse tipologie di geometria che un layer può avere [**link**](https://leafletjs.com/reference-1.7.1.html#path):
 
-* **L.circle** Disegnare un cerchio. Deve essere passato come primo argomento il punto in mappa (latitudine, longitudine) 
+* **L.circle** Disegna un cerchio. Deve essere passato come primo argomento il punto in mappa (latitudine, longitudine) 
 
-* **L.polyline** Disegnare Linee. Deve essere passato come primo argomento un array di coordinate geografiche 
+* **L.polyline** Disegna una linea. Deve essere passato come primo argomento un array di coordinate geografiche 
 ```js
  [[lat1, lon1], [lat2, lon2]]
 ```
 
-* **L.polygon** Disegnare Poligoni. Deve essere passato come primo argomento un array di coordinate geografiche  (possibile costruire buchi o multipoligoni)
+* **L.polygon** Disegna un poligono. Deve essere passato come primo argomento un array di coordinate geografiche  (possibile costruire buchi o multipoligoni)
 
-* **L.rectangle** Disegnare rettangoli. Deve essere passato come primo argomento un array contenete i due punti che definiscono i due punti opposti della diagonale.
+* **L.rectangle** Disegna un rettangolo. Deve essere passato come primo argomento un array contenete i due punti che definiscono i due punti opposti della diagonale.
 
 ed altri ancora.
 
@@ -147,12 +147,12 @@ Sono trattati allo stesso modo degli altri layers e rientrano in questa categori
 
 ## Concetto di Layer e Feature in Leaflet
 
-A differenza di Openlayers e del mondo GIS, dove esitono concetti di **Layer** e **Feature** e quindi dove ogni layer può contenere una o più features, in Leaflet esite solo il concetto di i **Layer**.
+A differenza di Openlayers e del mondo GIS, dove esitono concetti di **Layer** e **Feature** in Leaflet esite il concetto di **Layer**.
 
 * [**LayerGroup**](https://leafletjs.com/reference-1.7.1.html#layergroup) Questo permette di raggruppare più layers trattandoli come unico layer. In pratica il gruppo diventa il layer contenitore, mentre i layers saranno le features appartinenti al layer.
 
 * [**FeatureGroup**](https://leafletjs.com/reference-1.7.1.html#featuregroup) Estende il concetto di LayerGroup 
-    * il metodo **bindPopup** permette di associare il popup a tutti i layer in una volta invece che doverlo associare ad ogni singolo layer( lo stesso vale per il metodo bindTooltip)
+    * il metodo **bindPopup** permette di associare il popup a tutti i layer in una volta invece che doverlo associare ad ogni singolo layer (lo stesso vale per il metodo bindTooltip)
     * Gli **Events** (Eventi) sono propagati su ogni layer appartenente al FeatureGroup, così se il gruppo ha un gestore di eventi, verrà gestito per ogni layer (include anche l'evento mouse e eventi custom).
     * Ha l'evento **layeradd** e **layerremove**
 
