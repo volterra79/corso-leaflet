@@ -8,8 +8,8 @@ actionLink: /introduzione/
 features:
 - title: Documentazione
   details: Introduzione alla libreria Leaflet passo per passo.
-- title: Leaflet vs Openlayers
-  details: Le principali differenze tra le due librerie   
+- title: Esempi
+  details: Numerosi esempi per fare pratica   
   
 footer: MIT Licensed | Copyright © 2020 Francesco Boccacci (boccacci.francesco@gmail.com)
 ---
