@@ -12,7 +12,7 @@ Plugin per per la gestione dei layer **WFS** e **WFS-T**
 dove le opzioni da settare per costruire il layer sono:
 
 * **crs**:	Sistema di riferimento es - L.CRS.EPSG3857	
-* **showExisting**: deafult true Caricare le feature esistenti
+* **showExisting**: default true Caricare le feature esistenti
 * **geometryField**: il Campo geometrico da utilizzare
 * **url**: WFS server url
 * **typeNS**: Name Space
