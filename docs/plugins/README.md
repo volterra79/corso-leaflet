@@ -53,7 +53,7 @@ L.Control.MousePosition = L.Control.extend({
 
 });
 
-//megia opzioni della mappa
+//mergia opzioni della mappa
 L.Map.mergeOptions({
     positionControl: false
 });

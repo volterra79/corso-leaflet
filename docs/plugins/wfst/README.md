@@ -11,18 +11,18 @@ Plugin per per la gestione dei layer **WFS** e **WFS-T**
 
 dove le opzioni da settare per costruire il layer sono:
 
-. crs	Sistema di riferimento es - L.CRS.EPSG3857	
-. showExisting	true Caricare le feature esistenti
-. geometryField	‘Shape’ il campo geometrico
-. url	-	WFS url
-. typeNS	-	Name Space
-. typeName	-   layername
-. typeNSName	-	type namespace name
-. namespaceUri	-	namespace URI
-. opacity	1	opcità del layer
-. style	-	lo stile che si vuole dare al layer (style leaflet)
-. filter	-	[**filtro**](http://flexberry.github.io/Leaflet-WFST/#filter) 
-. maxFeatures	- Massimo numero di features ritornate dal server
+* **crs**:	Sistema di riferimento es - L.CRS.EPSG3857	
+* **showExisting**: deafult true Caricare le feature esistenti
+* **geometryField**: il Campo geometrico da utilizzare
+* **url**: WFS server url
+* **typeNS**: Name Space
+* **typeName**:  Layername
+* **typeNSName**: Type namespace name
+* **namespaceUri**:	Namespace URI
+* **opacity**:	deafult 1 Indica l'opacità del layer
+* **style**	: Lo stile che si vuole dare al layer (vedi stile Leaflet)
+* **filter**: [**filtro**](http://flexberry.github.io/Leaflet-WFST/#filter) 
+* **maxFeatures**: Massimo numero di features che si vuole caricare dal server
 
 ## Esempio aggiunta su mappa di un layer WFS-T
 
